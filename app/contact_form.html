@@ -1,0 +1,43 @@
+<h3>{{pageTitle}}</h3>
+<form id="contactForm" ng-submit="(contactId)?saveChanges():submitForm()">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" ng-model="contactinfo.name">
+    </div>
+    <br>
+
+    <div>
+        <label for="picture">Picture</label>
+        <!--<input type="file" id="picture" name="name" ng-model="contactinfo.picture">-->
+        <input ng-model="contactinfo.picture"
+               onchange="angular.element(this).scope().file_changed(this)"
+               type="file" accept="image/*" name="picture" id="picture"/>
+        <Br>
+        <img ng-src="{{contactinfo.picture}}" width="100">
+
+    </div>
+    <br>
+
+    <div>
+        <label for="contact">Contact</label>
+        <input type="text" id="contact" name="contact" ng-model="contactinfo.contact">
+    </div>
+    <br>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" ng-model="contactinfo.email">
+    </div>
+    <br>
+
+    <div>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" ng-model="contactinfo.address">
+    </div>
+    <br>
+
+    <div>
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+    </div>
+</form>

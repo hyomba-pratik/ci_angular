@@ -1,0 +1,10 @@
+<a href="#/contacts_form">Add New Contact</a><br>
+<input type="text" placeholder="Search..." ng-model="searchContact"><Br>
+<ol>
+    <li ng-repeat="(index, data) in contacts | filter:searchContact | orderBy:data.name" style="padding: 10px;">
+        <img src="{{data.picture}}" alt="" width="100">
+        {{data.name}}
+        <small><a href="#/contacts_form/{{data.id}}">Edit</a></small>
+        <small><a href="" ng-click="delete(data.id)">Delete</a></small>
+    </li>
+</ol>
